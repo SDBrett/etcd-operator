@@ -1,0 +1,13 @@
+apiVersion: operator.etcd.io/v1alpha1
+kind: EtcdCluster
+metadata:
+  name: example
+  namespace: etcd-test
+spec:
+  size: 1
+  version: v3.5.17
+  etcdOptions:
+    - "--experimental-peer-skip-client-san-verification"
+  storageSpec:
+    volumeSizeRequest: 100M
+    accessModes: ReadWriteOnce
